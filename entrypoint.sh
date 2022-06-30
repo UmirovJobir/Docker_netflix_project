@@ -1,7 +1,5 @@
 #!/bin/bash
 
-python3 print("Hello world1")
-
 python3 manage.py makemigrations
 python3 manage.py migrate
 
