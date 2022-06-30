@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python3 manage.py makemigrations
+python3 manage.py migrate
 
 if [ "$POSTGRES_DB" = "netflix" ]
 then
@@ -14,3 +16,5 @@ fi
 
 
 exec "$@"
+
+gunicorn netflix.wsgi:application --bind 68.183.201.244:8000
