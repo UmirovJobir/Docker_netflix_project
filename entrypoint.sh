@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python3 print("Hello world1")
+
 python3 manage.py makemigrations
 python3 manage.py migrate
 
@@ -18,3 +20,4 @@ fi
 exec "$@"
 
 gunicorn netflix.wsgi:application --bind 68.183.201.244:8000
+
