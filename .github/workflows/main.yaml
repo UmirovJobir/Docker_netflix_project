@@ -1,0 +1,29 @@
+name: Second Server Deploy
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v1
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: 68.183.201.244
+        USERNAME: root
+        PASSWORD: gfhjkm666%GFHJKM
+        PORT: 22
+        #SSH_PASSPHRASE: ${{secrets.SSH_PASSPHRASE}}
+        #KEY: ${{ secrets.SSHKEY }}
+        script: |
+          cd ~
+          cd Docker_netflix_project
+          git pull https://github.com/UmirovJobir/Docker_netflix_project.git
+          docker-compose down
+          docker-compose build
+          docker-compose up
+          
