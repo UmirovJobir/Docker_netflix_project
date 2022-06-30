@@ -15,7 +15,7 @@ jobs:
       with:
         host: 68.183.201.244
         USERNAME: root
-        PASSWORD: gfhjkm666%GFHJKM
+        PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         PORT: 22
         #SSH_PASSPHRASE: ${{secrets.SSH_PASSPHRASE}}
         #KEY: ${{ secrets.SSHKEY }}
