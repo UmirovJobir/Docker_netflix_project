@@ -17,5 +17,5 @@ fi
 
 exec "$@"
 
-gunicorn netflix.wsgi:application --bind 68.183.201.244:8000 --daemon
+gunicorn netflix.wsgi:application --bind 68.183.201.244:8000 --daemon 
 
